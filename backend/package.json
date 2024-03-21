@@ -1,0 +1,33 @@
+{
+  "name": "todoapp-back",
+  "version": "1.0.0",
+  "description": "TodoApp Backend",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "npx tsc --noEmit false",
+    "start": "node dist/index.js",
+    "compile": "tsc && node dist/index.js",
+    "dev": "nodemon -e ts --exec \"npm run compile\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Francis Vianney Salvamante",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.9.2",
+    "reflect-metadata": "^0.2.1",
+    "typeorm": "^0.3.20"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.30",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.3"
+  }
+}
