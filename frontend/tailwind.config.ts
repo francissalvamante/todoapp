@@ -11,6 +11,9 @@ const config: Config = {
       colors: {
         "container-border": "#8a7f6e",
       },
+      screens: {
+        xs: { max: "640px" },
+      },
     },
   },
   plugins: [],

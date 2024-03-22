@@ -18,6 +18,20 @@ const getTodos = (getDTO) => __awaiter(void 0, void 0, void 0, function* () {
         identifier: getDTO.identifier,
     });
 });
+const addTodo = (addDTO) => __awaiter(void 0, void 0, void 0, function* () {
+    const todo = new todos_entity_1.Todos();
+    todo.identifier = addDTO.identifier;
+    todo.title = addDTO.title;
+    return yield todosRepository.save(todo);
+});
+const updateTodo = (updateDTO) => __awaiter(void 0, void 0, void 0, function* () {
+    yield todosRepository.save({
+        id: updateDTO.id,
+        completed: updateDTO.completed,
+    });
+});
 exports.todosService = {
     getTodos,
+    addTodo,
+    updateTodo,
 };

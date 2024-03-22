@@ -1,7 +1,7 @@
 "use client";
 
 import firebaseApp from "@/firebase/config";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { getAuth, onAuthStateChanged, type User } from "firebase/auth";
 import {
   createContext,
   useContext,
@@ -12,7 +12,9 @@ import {
 
 const auth = getAuth(firebaseApp);
 
-export const AuthContext = createContext({ user: null });
+const DEFAULT_DATA: { user: User | null } = { user: null };
+
+export const AuthContext = createContext(DEFAULT_DATA);
 
 export const useAuthContext = () => useContext(AuthContext);
 

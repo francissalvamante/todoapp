@@ -13,7 +13,8 @@ exports.todosController = void 0;
 const todos_service_1 = require("../services/todos.service");
 const getTodos = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const getDTO = Object.assign({}, req.body);
+        const getDTO = { identifier: req.query.identifier };
+        console.log(getDTO);
         const todos = yield todos_service_1.todosService.getTodos(getDTO);
         res.status(200).json({ message: "Success", todos });
     }
@@ -25,8 +26,23 @@ const getTodos = (req, res, next) => __awaiter(void 0, void 0, void 0, function*
 const addTodo = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const addDTO = Object.assign({}, req.body);
-        console.log("addDTO", addDTO);
-        res.status(200).json({ message: "Success" });
+        const todo = yield todos_service_1.todosService.addTodo(addDTO);
+        res.status(200).json({ message: "Todo successfully added", todo });
+    }
+    catch (err) {
+        console.error(`Adding Todo failed: ${err}`);
+        next(err);
+    }
+});
+const updateTodo = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { id } = req.params;
+        const updateDTO = {
+            id: parseInt(id),
+            completed: req.body.completed,
+        };
+        yield todos_service_1.todosService.updateTodo(updateDTO);
+        res.status(200).json({ message: `Todo ${id} successfully updated` });
     }
     catch (err) {
         console.error(`Adding Todo failed: ${err}`);
@@ -36,4 +52,5 @@ const addTodo = (req, res, next) => __awaiter(void 0, void 0, void 0, function* 
 exports.todosController = {
     getTodos,
     addTodo,
+    updateTodo,
 };

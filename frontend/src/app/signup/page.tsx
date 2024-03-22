@@ -34,31 +34,37 @@ const Signup = () => {
   };
 
   return (
-    <div className="wrapper">
-      <div className="form-wrapper">
-        <h1 className="mt-60 mb-30">Sign Up</h1>
-        <form onSubmit={handleSubmit} className="form">
-          <label htmlFor="email">
-            <p>Email</p>
-            <input
-              id="email"
-              required
-              type="email"
-              onChange={handleChange}
-              value={formData.email}
-            />
-          </label>
-          <label htmlFor="password">
-            <p>Password</p>
-            <input
-              id="password"
-              required
-              type="password"
-              onChange={handleChange}
-              value={formData.password}
-            />
-          </label>
-          <button type="submit">Sign up</button>
+    <div className="wrapper flex justify-center items-center flex-auto bg-gray-500 w-1/5 p-10 rounded-lg">
+      <div className="form-wrapper flex flex-col items-center">
+        <h1 className="text-2xl font-bold">Signup</h1>
+        <form
+          onSubmit={handleSubmit}
+          className="form flex flex-col gap-3 my-5 items-center"
+        >
+          <input
+            type="email"
+            id="email"
+            required
+            onChange={handleChange}
+            className="py-2 bg-white rounded-full px-6 placeholder:text-xs"
+            aria-placeholder="Email Address"
+            placeholder="Email Address"
+          />
+          <input
+            type="password"
+            id="password"
+            required
+            onChange={handleChange}
+            className="py-2 bg-white rounded-full px-6 placeholder:text-xs"
+            aria-placeholder="Password"
+            placeholder="Password"
+          />
+          <button
+            type="submit"
+            className="py-2 bg-blue-400 rounded-full px-6 w-1/2"
+          >
+            Signup
+          </button>
         </form>
       </div>
     </div>
