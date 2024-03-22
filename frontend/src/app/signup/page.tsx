@@ -18,7 +18,6 @@ const Signup = () => {
 
     if (error) return console.error(error);
 
-    console.log(result);
     return router.push("/");
   };
 

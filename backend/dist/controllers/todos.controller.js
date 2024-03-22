@@ -14,7 +14,6 @@ const todos_service_1 = require("../services/todos.service");
 const getTodos = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const getDTO = { identifier: req.query.identifier };
-        console.log(getDTO);
         const todos = yield todos_service_1.todosService.getTodos(getDTO);
         res.status(200).json({ message: "Success", todos });
     }

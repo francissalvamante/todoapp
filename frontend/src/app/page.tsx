@@ -26,7 +26,6 @@ export default function Home() {
 
   useEffect(() => {
     if (!user) router.push("/unauthorized");
-    console.log("user", user);
     axios({
       method: "get",
       url: `${API_URL}/todos`,

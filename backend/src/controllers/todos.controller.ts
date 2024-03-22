@@ -4,7 +4,6 @@ import { todosService } from "../services/todos.service";
 const getTodos = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const getDTO = { identifier: req.query.identifier as string };
-    console.log(getDTO);
 
     const todos = await todosService.getTodos(getDTO);
 
