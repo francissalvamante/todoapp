@@ -1,5 +1,6 @@
 "use client";
 
+import Loading from "@/app/components/Loading";
 import firebaseApp from "@/firebase/config";
 import { getAuth, onAuthStateChanged, type User } from "firebase/auth";
 import {
@@ -38,7 +39,7 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
 
   return (
     <AuthContext.Provider value={{ user }}>
-      {loading ? <div>Loading...</div> : children}
+      {loading ? <Loading loading={loading} /> : children}
     </AuthContext.Provider>
   );
 };

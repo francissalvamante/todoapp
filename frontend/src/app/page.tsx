@@ -4,6 +4,7 @@ import { useAuthContext } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import axios from "axios";
+import Loading from "./components/Loading";
 
 interface TodoItem {
   id: number;
@@ -153,10 +154,10 @@ export default function Home() {
       <div className="flex md:w-1/4 sm:w-1/2 xs:w-full border-2 border-container-border rounded-lg p-5 max-h-96">
         <div
           className={`list flex flex-col flex-auto overflow-auto ${
-            loading && "justify-center"
+            loading ? "items-center" : ""
           }`}
         >
-          {!loading ? todoList : <p>Loading...</p>}
+          {!loading ? todoList : <Loading loading={loading} />}
         </div>
       </div>
     </main>
