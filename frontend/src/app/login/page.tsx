@@ -34,7 +34,7 @@ const Login = () => {
   };
 
   return (
-    <div className="wrapper flex justify-center items-center flex-auto bg-gray-500 w-1/4 p-10 rounded-lg">
+    <div className="wrapper flex justify-center items-center flex-auto bg-gray-500 w-1/4 p-10 max-h-96 rounded-lg">
       <div className="form-wrapper flex flex-col items-center w-full">
         <h1 className="text-2xl font-bold">Login</h1>
         <form

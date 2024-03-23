@@ -33,7 +33,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="wrapper flex justify-center items-center flex-auto bg-gray-500 w-1/5 p-10 rounded-lg">
+    <div className="wrapper flex justify-center items-center flex-auto bg-gray-500 w-1/5 p-10 max-h-96 rounded-lg">
       <div className="form-wrapper flex flex-col items-center">
         <h1 className="text-2xl font-bold">Signup</h1>
         <form
