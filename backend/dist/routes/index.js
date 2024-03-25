@@ -7,4 +7,7 @@ const express_1 = require("express");
 const todos_route_1 = __importDefault(require("./todos.route"));
 const router = (0, express_1.Router)();
 router.use("/todos", todos_route_1.default);
+router.use("/", (req, res, next) => {
+    res.send({ message: "Test route successful" });
+});
 exports.default = router;
