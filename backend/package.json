@@ -4,7 +4,7 @@
   "description": "TodoApp Backend",
   "main": "src/index.ts",
   "scripts": {
-    "build": "npx tsc --noEmit false --outDir dist",
+    "build": "npx tsc --noEmit false --output dist",
     "start": "node dist/index.js",
     "compile": "tsc && node dist/index.js",
     "dev": "nodemon -e ts --exec \"npm run compile\"",
