@@ -9,8 +9,7 @@ export const source = new DataSource({
   username: config.mysqlUsername,
   password: config.mysqlPassword,
   database: config.db,
-  entities: ["dist/entity/*.js"],
-  migrations: ["dist/migrations/*.js"],
+  entities: ["src/entity/*.ts"],
   logging: true,
   synchronize: true,
 });
