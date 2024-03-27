@@ -4,10 +4,8 @@
   "description": "TodoApp Backend",
   "main": "src/index.ts",
   "scripts": {
-    "build": "npx tsc --noEmit false",
-    "start": "node dist/index.js",
-    "compile": "tsc && node dist/index.js",
-    "dev": "nodemon -e ts --exec \"npm run compile\"",
+    "start": "node index.ts",
+    "dev": "nodemon index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Francis Vianney Salvamante",

@@ -1,8 +1,8 @@
 import express from "express";
 import cors from "cors";
-import { source } from "./dataSource";
+import { source } from "./src/dataSource";
 import bodyParser from "body-parser";
-import routes from "./routes";
+import routes from "./src/routes";
 
 const app = express();
 const PORT = 3030;
